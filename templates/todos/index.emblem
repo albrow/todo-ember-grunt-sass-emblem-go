@@ -1,0 +1,10 @@
+ul#todo-list
+  each itemController="todo"
+    li class={ isCompleted:completed isEditing:editing }
+      if isEditing
+        edit-todo class="edit" value=title focus-out="acceptChanges" insert-newline="acceptChanges"
+      else
+        = input class="toggle" type="checkbox" checked=isCompleted
+        label doubleClick="editTodo"
+          = title
+        button.destroy click="removeTodo"
