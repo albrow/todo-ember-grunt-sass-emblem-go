@@ -1,7 +1,7 @@
 section#todoapp
   header#header
     h1 todos
-    input#new-todo{action "createTodo"} type="text" placeholder="What needs to be done?" value=newTitle 
+    = input id="new-todo" action="createTodo" type="text" placeholder="What needs to be done?" valueBinding="newTitle"
   section#main
     = outlet
     = input id="toggle-all" type="checkbox" checked=allAreDone

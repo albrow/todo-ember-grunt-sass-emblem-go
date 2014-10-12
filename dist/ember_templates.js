@@ -1,7 +1,7 @@
 Ember.TEMPLATES["todos"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
-  var buffer = '', stack1, stack2, hashTypes, hashContexts, options, escapeExpression=this.escapeExpression, helperMissing=helpers.helperMissing, self=this;
+  var buffer = '', stack1, stack2, hashContexts, hashTypes, options, escapeExpression=this.escapeExpression, helperMissing=helpers.helperMissing, self=this;
 
 function program1(depth0,data) {
   
@@ -42,18 +42,18 @@ function program9(depth0,data) {
   return buffer;
   }
 
-  data.buffer.push("<section id=\"todoapp\"><header id=\"header\"><h1>todos</h1><input id=\"new-todo\" ");
-  hashTypes = {};
-  hashContexts = {};
-  data.buffer.push(escapeExpression(helpers.action.call(depth0, "createTodo", {hash:{},contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push(" type=\"text\" placeholder=\"What needs to be done?\" ");
-  hashContexts = {'value': depth0};
-  hashTypes = {'value': "STRING"};
-  stack1 = helpers['bind-attr'].call(depth0, {hash:{
-    'value': ("newTitle")
-  },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push(" /></header><section id=\"main\">");
+  data.buffer.push("<section id=\"todoapp\"><header id=\"header\"><h1>todos</h1>");
+  hashContexts = {'id': depth0,'action': depth0,'type': depth0,'placeholder': depth0,'valueBinding': depth0};
+  hashTypes = {'id': "STRING",'action': "STRING",'type': "STRING",'placeholder': "STRING",'valueBinding': "STRING"};
+  options = {hash:{
+    'id': ("new-todo"),
+    'action': ("createTodo"),
+    'type': ("text"),
+    'placeholder': ("What needs to be done?"),
+    'valueBinding': ("newTitle")
+  },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  data.buffer.push(escapeExpression(((stack1 = helpers.input || depth0.input),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "input", options))));
+  data.buffer.push("</header><section id=\"main\">");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "outlet", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
